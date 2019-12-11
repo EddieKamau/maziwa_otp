@@ -55,8 +55,8 @@ class MaziwzChannel extends ApplicationChannel {
         });
         await _db.close();
         return Response.ok({
-          "address": _address,
-          "message": 'Congrats, you bought milk worth Ksh$_amount. Use \nref: $_ref, \notp: $_otp \n on your nearest registered Milk ATM'
+          "address": _address,''
+          "message": 'We have received Ksh$_amount/- from you. \nPayment ref $_ref \nYour One Time Password is $_otp use it to Collect your milk at the nearest registered ATM'
         });
       });
     
