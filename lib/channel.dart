@@ -35,7 +35,7 @@ class MaziwzChannel extends ApplicationChannel {
         final DbCollection _dbCollection = _db.collection('maziwa');
         await _db.open();
         Map<String, dynamic> _dbres = await _dbCollection.findOne(where.eq('ref', _ref).eq('otp', _otp));
-        while(_dbres == null){
+        while(_dbres != null){
           _otp = 1000 + rng.nextInt(1000);
           _dbres = await _dbCollection.findOne(where.eq('ref', _ref).eq('otp', _otp));
         }
