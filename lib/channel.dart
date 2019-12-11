@@ -23,8 +23,12 @@ class MaziwzChannel extends ApplicationChannel {
         String _ref;
         double _amount;
         try{
-          final int _len = _body.toString().split(" ").length;
-          _address = _body.toString().split(" ")[_len-10].split('.')[0];
+          final List<String> _len = _body.toString().split(" ");
+          _len.forEach((item){
+            if(item.contains('254')){
+              _address = item.split('.')[0];
+            }
+          });
           _ref = _address.substring(8);
           _amount = double.parse(_body.toString().split(" ")[7].split("Ksh")[1]);
         } catch (e){
