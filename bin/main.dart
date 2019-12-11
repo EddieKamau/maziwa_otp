@@ -3,7 +3,7 @@ import 'package:maziwz/maziwz.dart';
 Future main() async {
   final app = Application<MaziwzChannel>()
       ..options.configurationFilePath = "config.yaml"
-      ..options.port = 2009;
+      ..options.port = 8008;
 
   final count = Platform.numberOfProcessors ~/ 2;
   await app.start(numberOfInstances: count > 0 ? count : 1);
